@@ -40,7 +40,12 @@ setTimeout(function() {
     for (var i = 0; i < 5; i++) {
         
         numeroRichiesto = parseInt(prompt("inserisci il numero"));
+        
+        while(controlloNumeroInArray(numeroRichiesto,numeriUtentePresi)){
+            numeroRichiesto = parseInt(prompt("inserisci un numero diverso da quelli già inseriti"));
+        }
         // se il numero richiesto è uguale al numero casuale pushalo nell'array numeriUtentePresi
+
         if(controlloNumeroInArray(numeroRichiesto,numeriCasuali)){
             numeriUtentePresi.push(numeroRichiesto);
             // stampa ogni numero preso
@@ -49,6 +54,6 @@ setTimeout(function() {
     }
     // punti fatti
     console.log("hai fatto", numeriUtentePresi.length, "punti, i tuoi numeri sono", numeriUtentePresi);
-}, 3000);
+}, 30000);
 
 
